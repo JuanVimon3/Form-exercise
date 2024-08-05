@@ -35,14 +35,23 @@ html, body {
     height: 100%;
 }
 
+.userForm{
+    position: relative;
+    top: 10%;
+}
 .userForm form {
-    margin-top: 30%;
+    margin-top: 25%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 20px;
     row-gap: 1px;
     width: 100%;
     padding-right: 20px;
+}
+
+.warningTitle {
+    position: relative;
+    top: 10%;
 }
 
 .formBox {
@@ -54,12 +63,12 @@ html, body {
 
 label {
     text-align: left;
-    grid-column: span 1;
+    grid-column: span 2;
 }
 
 input {
-    width: 90%;
-    grid-column: span ;
+    width: 80%;
+    grid-column: span 2;
 }
 
 button {
@@ -91,9 +100,10 @@ label {
 }
 
 .labelAuthor{
-    position: absolute;
-    bottom: 10px;
-    left: 30%;
+    position: relative;
+    bottom: 50px;
+    left: 0;
+    right: 0;
     color: white;
 }
 
