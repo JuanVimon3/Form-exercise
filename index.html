@@ -28,13 +28,33 @@
                 <label for="phone">PHONE NUMBER</label>
                 <input type="tel" id="phone" name="phoneNumber">
                 <label for="psw">PASSWORD</label>
-                <input type="password" id="psw" name="password">
-                <label for="cpsw">CONFIRM PASSWORD</label>
+                <input type="password" id="psw" name="password" required>
+                <label for="cpsw">CONFIRM PASSWORD</label required>
                 <input type="password" id="cpsw" name="confirmPassword">
                 <button type="submit">CREATE ACCOUNT</button>
             </form>
             <h3>Already have an account? <a class="login">Log in</a></h3>
         </div>      
     </div>
+    <script>
+        documen.getElementById('cpsw').addEventListener('input', function() {
+            const password = document.getElementById('psw').value;
+            const confirmPassword = this.value;
+            
+            if (confirmPassword === password) {
+                this.setCustomValidity('');
+            } else {
+                this.setCustomValidity('Passwords do not match');
+            }
+        });
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            const password = document.getElementById('psw').value;
+            const confirmPassword = document.getElementById('cpsw').value;
+            if(password !== confirmPassword){
+                alert('Passwords do not match')
+                event.preventDefault();
+            }
+        })
+    </script>
 </body>
 </html>
